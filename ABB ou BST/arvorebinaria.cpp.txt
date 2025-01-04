@@ -1,0 +1,103 @@
+#include <iostream>
+#include "arvorebinaria.h"
+#include <cstddef>
+
+using namespace std;
+
+
+
+
+
+ArvoreBinariaBusca::ArvoreBinariaBusca()
+{
+    raiz == NULL;
+    }
+
+ArvoreBinariaBusca::~ArvoreBinariaBusca()
+{}
+
+void ArvoreBinariaBusca:: DeletarArvore(No* NoAtual)
+{}
+
+No* ArvoreBinariaBusca::ObterRaiz()
+{
+    return raiz;
+    }
+
+bool ArvoreBinariaBusca::estavazio()
+{
+    return (raiz == NULL);
+    }
+
+bool ArvoreBinariaBusca::estacheio()
+{
+    try{
+        No* temp = new No;
+        delete temp;
+        return false;
+    }catch(bad_alloc exception){
+        return true;
+        }
+
+void ArvoreBinariaBusca::inserir (Aluno aluno)
+{
+    if (estacheio()){
+        cout << "A Arvore esta cheia! \n";
+        cout << "Nao foi possivel inserir elemento! \n;"
+        } else{
+            No* NoNovo = new No;
+            NoNovo -> aluno  = aluno;
+            NoNovo -> filhodireita = NULL;
+            NoNovo -> filhoesquerda = NULL;
+            if (raiz == NULL){
+                raiz = NoNovo;
+                } else {
+                    No* temp = raiz;
+                    while (temp != NULL){
+                        if (aluno.ObterRa < temp->aluno.ObterRa){
+                            if (temp->filhoesquerda == NULL;
+                                temp->filhoesquerda = NoNovo;
+                                break;
+                            }else {
+                                temp = temp->filhoesquerda;
+                                }
+                        }else{
+                            if (temp->filhodireita == NULL){
+                                temp->filhodireita = NoNovo;
+                                break;
+                            }else {
+                                temp = temp->filhodireita;
+                                }
+                            }
+                    }
+            }
+    }
+
+void ArvoreBinariaBusca::remover (Aluno aluno)
+{}
+
+void ArvoreBinariaBusca::buscar (Aluno& aluno, bool& busca)
+{
+    busca = false;
+    No* NoAtual = raiz;
+    while (NoAtual != NULL){
+        if (aluno.ObterRa() < NoAtual->aluno.ObterRa()){
+            NoAtual = NoAtual->filhoesquerda;
+            }else if (aluno.ObterRa() > NoAtual->aluno.ObterRa()){
+                NoAtual = NoAtual->filhodireita;
+                }else{
+                    busca = true;
+                    aluno = NoAtual->aluno;
+                    break;
+                    }
+        }
+    }
+
+void ArvoreBinariaBusca::imprimirpre (No* NoAtual)
+{}
+
+void ArvoreBinariaBusca::imprimirem (No* NoAtual)
+{}
+
+void ArvoreBinariaBusca::imprimirpos (No* NoAtual)
+{}

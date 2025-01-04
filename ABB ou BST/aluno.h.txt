@@ -1,0 +1,18 @@
+\\ aluno.h
+
+#include <iostream>
+using namespace std;
+
+class Aluno{
+    private:
+    int ra;
+    std:: string nome;
+    
+    
+    public:
+    Aluno();
+    Aluno(ind r, std::string n);
+    string ObterNome();
+    int ObterRa();
+    
+};

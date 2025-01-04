@@ -1,0 +1,25 @@
+#include "arvorebinaria.h"
+using namespace std;
+
+
+Aluno::Aluno();
+{
+    ra = -1;
+    nome = " ";
+    }
+
+Aluno::Aluno(ind r, std::string n);
+{
+    ra = r;
+    nome = n;
+    }  
+
+string Aluno::ObterNome();
+{
+    return nome;
+    }
+    
+int Aluno::ObterRa();
+{
+    return ra;
+    }    

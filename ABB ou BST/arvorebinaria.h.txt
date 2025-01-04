@@ -1,0 +1,32 @@
+\\ arvorebinaria_main.cpp
+
+#include <iostream>
+#include "arvorebinaria.h"
+
+struct No{
+    Aluno aluno;
+    No* filhoesquerda;
+    No* filhodireita;
+};
+
+class ArvoreBinariaBusca{
+    
+    private:
+    No* raiz;
+    
+    
+    public:
+    ArvoreBinariaBusca();
+    ~ArvoreBinariaBusca();
+    void DeletarArvore(No* NoAtual);
+    No* ObterRaiz();
+    bool estavazio();
+    bool estacheio();
+    void inserir (Aluno aluno);
+    void remover (Aluno aluno);
+    void buscar (Aluno& aluno, bool& busca);
+    void imprimirpr (No* NoAtual);
+    void imprimirem (No* NoAtual);
+    void imprimirpos (No* NoAtual);
+    
+};

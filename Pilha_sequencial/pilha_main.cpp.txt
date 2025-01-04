@@ -1,0 +1,33 @@
+#include <iostream>
+#include "dinamycstack.h"
+
+using namespace std;
+
+int main(){
+    dinamyckstakc stack1;
+    TypeItem item;
+    int opcao;
+    cout << "Gerador de Pilhas Dinamocas! \n";
+    
+    do {
+        cout << "Digite 0 para encerrar o app! \n";
+        cout << "Digite 1 para inserir um elemento! \n";
+        cout << "Digite 2 para remover um elemento! \n";
+        cout << "Digite 3 para impressão! \n";
+        cin >> opcao;
+        
+        if (opcao == 1){
+            cout << "Digite o numero do elemento: ";
+            cin >> item;
+            stack1.push(item);
+        }else if (opcao == 2){
+            item stack.pop();
+            cout << "Elemento removido: " << item << endl;
+            
+        }else if (opca0 == 3){
+            stack1.print();
+            
+        }while (opcao != 0);
+        return 0;
+        
+}

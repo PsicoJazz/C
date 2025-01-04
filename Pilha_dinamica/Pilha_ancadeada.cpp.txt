@@ -1,0 +1,80 @@
+# include <iostream>
+#include "dinamycstatic"
+#include <cstddef>         \\NULL
+
+using namespace std;
+
+
+
+dinamycstack::dinamycstack()
+{
+    NoTopo = NULL;
+}
+
+dinamycstack::~dinamycstack()
+{
+    No* NoTemp;
+    while (NoTopo != NULL){
+    NoTemp = NoTopo;
+    NoTopo = NoTopo->proximo;
+    delete NoTemp;
+    }
+}
+
+bool dinamycstack::isfull()
+{
+   No* NoNovo;
+   try{
+       NoNovo = new No;
+       delete NoNovo;
+       return false;
+   }catch(bad_alloc exception){
+       return true;
+   }
+}
+
+bool dinamycstack::isempty()
+{
+    return (NoTopo == NULL);
+}
+
+void dinamycstack::push(TypeItem item)
+{
+    if (isfull()){
+        cout << "A pilha esta cheia! \n";
+        cout << "Nao foi possivel inserir elemento! \n";
+        
+    } else {
+        No* NoNovo = new No;
+        NoNovo->valor = item;
+        NoNovo->proximo = NoTopo;
+        NoTopo = NoNovo;
+    }
+}
+
+TypeItem dinamycstack::pop()
+{
+    if (isempty()){
+        cout << "A pilha esta vazia! \n";
+        cout << "Nao foi possivel remover elemento! \n";
+        return 0;
+    } else {
+        No* NoTemp;
+        NoTemp = NoTopo;
+        TypeItem item = NoTopo->valor;
+        NoTopo = NoTopo->proximo;
+        delete NoTemp;
+        return item;
+    }
+}
+
+void dinamycstack::print()
+{
+    No* NoTemp = NoTopo;
+    cout << "Pilha : [";
+    while(NoTemp != NULL){
+        cout << NoTemp->valor << " ";
+        NoTemp = NoTemp->proximo;
+    }
+    cout << "]\n";
+}

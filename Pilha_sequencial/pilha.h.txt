@@ -1,0 +1,19 @@
+typedef int TypeItem;
+const int max_item = 100;
+
+class stack{
+    
+  private:  
+  int lenght;
+  int* estrutura;
+  
+  public:
+  stack();
+   ~stack();
+  bool isfull();
+  bool isempty();
+  void push (TypeItem item);
+  TypeItem pop();
+  void imprimir();
+  
+};

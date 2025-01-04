@@ -1,0 +1,21 @@
+typedef int TypeItem;
+
+struct No{
+  TypeItem valor;
+  No* proximo;
+};
+
+class dinamycstack{
+    private:
+    No* NoTopo;
+    
+    public:
+    dinamycstack();
+    ~dinamycstack();
+    bool isfull();
+    bool isempty();
+    void push(TypeItem item);
+    TypeItem pop();
+    void print();
+    
+}

@@ -1,0 +1,59 @@
+#include <iostream>;
+#include "stack";
+
+namespace using std;
+
+stack::stack()
+{ 
+    stack = 0;
+    estrutura = new TypeItem[max_item];
+}
+
+stack::~stack()
+{
+    delete[] estrutura;
+}
+
+bool stack::isfull()
+{
+    return (lenght == max_item);
+}
+
+bool stack::isempty()
+{
+    return (lenght == 0);    
+}
+
+void stack::push(TypeItem item)
+{
+    if (isfull()){
+        cout << "A lista está cheia\n";
+    }else {
+    estrutura[lenght] = item;
+    lenght++;
+    }
+}
+
+TypeItem stack::pop()
+{
+    if (isempty()){
+        cout << "A pilha nao possui elemento para remover! \n";
+        return 0;
+    }else{
+        estrutura--;
+        return estrutura[lenght];
+    }
+}
+
+void stack::print()
+{
+    cout << "Pilha: [";
+    for (int i=0; i<lenght; i++){
+        cout << estrutura[i] << " ";
+    }
+    cout << "\n";
+}
+
+int stack::lenght()
+
+
